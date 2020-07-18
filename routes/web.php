@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/car','CarController@allcars');
+Route::get('/car/{id}','CarController@particularcar');
+Route::post('/car','CarController@newcar');
