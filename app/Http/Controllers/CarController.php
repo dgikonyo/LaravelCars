@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 
+use App\Car;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +15,8 @@ class CarController extends Controller
         
 
         $cars=Car::all();
-        return view('car.allcars',['cars'=>$cars]);
+        
+        return view('allcars',['cars'=>$cars]);
 
         /**
          * 
@@ -35,7 +38,7 @@ class CarController extends Controller
     }
 
     public function newcar(){
-        $cars=DB::table('cars')->latest()->first();
+        
 
         return $cars;
     }
